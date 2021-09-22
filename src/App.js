@@ -16,133 +16,111 @@ function App() {
   return (
       <div className={classes.root}>
         <Particles
-      options={{
-        fullScreen: {
-          enable: true,
-          zIndex: 0
+          options={{
+            background: {
+              color: {
+              value: "white"
+              }
+            },
+            fullScreen: {
+              enable: true,
+              zIndex: -1
+            },
+            interactivity: {
+              detectsOn: "canvas"
+            },
+        emitters: {
+          position: {
+            x: 50,
+            y: 0
+          },
+          rate: {
+            quantity: 5,
+            delay: 1
+          }
         },
         particles: {
           number: {
-            value: 200,
-            limit: 300,
-            density: {
+            value: 0
+          },
+          opacity: {
+            value: 1
+          },
+          rotate: {
+            value: {
+              min: 0,
+              max: 360
+            },
+            direction: "random",
+            animation: {
               enable: true,
-              value_area: 800
+              speed: 10
+            }
+          },
+          tilt: {
+            direction: "random",
+            enable: false,
+            value: {
+              min: 0,
+              max: 360
+            },
+            animation: {
+              enable: true,
+              speed: 10
+            }
+          },
+          wobble: {
+            distance: 10,
+            enable: true,
+            speed: {
+              min: -5,
+              max: 15
             }
           },
           color: {
-            value: "#ffffff"
-          },
-          shape: {
-            type: "circle",
-            stroke: {
-              width: 0,
-              color: "#000000"
-            },
-            polygon: {
-              nb_sides: 5
-            },
-          },
-          opacity: {
-            value: 0.5,
-            random: true,
-            anim: {
-              enable: true,
-              speed: 1,
-              opacity_min: 0.5,
-              sync: false
-            }
+            value: ["#2194f3", "#13c552", "#ff6961"]
           },
           size: {
-            value: 30,
-            random: true,
-            anim: {
-              enable: true,
-              speed: 10,
-              size_min: 10,
-              sync: false
-            }
-          },
-          line_linked: {
-            enable: true,
-            distance: 100,
-            color: "#ffffff",
-            opacity: 1,
-            width: 1
+            value: 10
           },
           move: {
+            decay: 0.05,
+            direction: "top",
             enable: true,
-            speed: 3,
-            direction: "none",
-            random: false,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-            attract: {
-              enable: false,
-              rotateX: 600,
-              rotateY: 1200
-            }
-          }
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onHover: {
+            gravity: {
               enable: true,
-              mode: "repulse",
-              parallax: {
-                enable: false,
-                force: 60,
-                smooth: 10
-              }
+              maxSpeed: 10
             },
-            onClick: {
-              enable: true,
-              mode: "push"
+            outModes: {
+              top: "none",
+              default: "destroy"
             },
-            resize: true
+            speed: { min: 25, max: 50 }
           },
-          modes: {
-            grab: {
-              distance: 400,
-              lineLinked: {
-                opacity: 1
-              }
-            },
-            bubble: {
-              distance: 400,
-              size: 100,
-              duration: 2,
-              opacity: 1,
-              speed: 2
-            },
-            repulse: {
-              distance: 200
-            },
-            push: {
-              particles_nb: 4
-            },
-            remove: {
-              particles_nb: 2
+          shape: {
+            type: [
+              "circle",
+              "square",
+              "triangle",
+              "character",
+              "character",
+              "character",
+              "character",
+            ],
+            options: {
+              character: [
+                {
+                  fill: true,
+                  value: ["📝", "✅", "🧠", "⏳", "🔋", "⭐️"],
+                  style: "",
+                  weight: 400
+                }
+              ]
             }
           }
-        },
-        backgroundMask: {
-          enable: true,
-          cover: {
-            color: {
-              value: {
-                r: 0,
-                g: 0,
-                b: 0
-              }
-            }
-          }
-        },
-        retina_detect: true,
-        fps_limit: 60,
-      }} />
+        }
+      }}
+    />
           <Header />
           <Form />
           <TodoList />

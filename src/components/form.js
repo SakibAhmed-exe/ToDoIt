@@ -2,18 +2,17 @@ import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid'
-import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button'
-import Zoom from '@material-ui/core/Zoom';
 import { connect } from 'react-redux'
 import * as actionTypes from '../store/actions';
 const useStyles = makeStyles({
-    root: {
+    grid: {
         marginTop: '2%',
         marginBottom: '1%',
         borderRadius: '25px',
+        backgroundColor: 'white',
         padding: '3%',
-        width: '90%',
+        width: '70%',
         margin: 'auto',
         boxShadow: "0px 4px 15px 3px rgba( 155, 164, 193, .8 )",
     },
@@ -26,7 +25,7 @@ const useStyles = makeStyles({
             backgroundColor: 'rgba(0,105,192)',
             opacity: 1,
         }
-    },
+    }
 });
 
 const Form = ({ title, setTitle, addItem, editItem, edit, error, setError }) => {
@@ -54,8 +53,7 @@ const Form = ({ title, setTitle, addItem, editItem, edit, error, setError }) => 
         }
     }
     return (
-        <Container maxWidth="sm" className={classes.root}>
-            <Grid container alignItems="center">
+            <Grid container alignItems="center" className={classes.grid}>
                 <Grid style={{backgroundColor: 'white'}} item xs={12}>
                     <TextField value={title} onChange={handleChange}
                     error={!!error} helperText={error} fullWidth label="Add your tasks here!" multiline variant="outlined" />
@@ -66,7 +64,6 @@ const Form = ({ title, setTitle, addItem, editItem, edit, error, setError }) => 
                     </Button>
                 </Grid>
             </Grid>
-        </Container>
     )
 }
 const mapStateToProps = (state) => {
