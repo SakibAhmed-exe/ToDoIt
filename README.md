@@ -1,5 +1,4 @@
 # ToDoIt
-
 This is my take on the classic ToDo App. This application was bootstrapped with react-create-app. I've included some pictures below to give you an idea of how it works. 
 
 <p align="center">
